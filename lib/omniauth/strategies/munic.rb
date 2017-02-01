@@ -18,14 +18,15 @@ module OmniAuth
             uid { raw_info['id'] }
 
             info do
-                {
-                    email: raw_info['email']
-                    full_name: raw_info['full_name']
-                    time_zone: raw_info['time_zone']
-                    company: raw_info['company']
-                    vat: raw_info['vat']
+                i = {
+                    email: raw_info['email'],
+                    full_name: raw_info['full_name'],
                     language: raw_info['language']
                 }
+                i[:time_zone] = raw_info['time_zone'] unless raw_info['time_zone'].nil?
+                i[:company] = raw_info['company'] unless raw_info['company'].nil?
+                i[:vat] = raw_info['vat'] unless raw_info['vat'].nil?
+                i
             end
 
             def raw_info

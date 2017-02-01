@@ -98,9 +98,9 @@ You can get user's information when [creating a session](#Session-Controller) wi
 You can get :
 * Email -> auth["info"].email
 * Full Name -> auth["info"].full_name
-* Company Name -> auth["info"].company_name
-* Time Zone -> auth["info"].time_zone
-* V.a.t -> auth["info"].vat
+* Company Name -> auth["info"].company_name if present
+* Time Zone -> auth["info"].time_zone if present
+* V.a.t -> auth["info"].vat if present
 * Language -> auth["info"].language
 
 ### Update User's information
