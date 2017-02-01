@@ -10,7 +10,7 @@ module OmniAuth
 
             # This is where you pass the options you would pass when
             # initializing your consumer from the OAuth gem.
-            option :client_options, {:site => "accounts.munic.io"}
+            option :client_options, {:site => "https://connect.munic.io"}
 
             # These are called after authentication has succeeded. If
             # possible, you should try to set the UID without making

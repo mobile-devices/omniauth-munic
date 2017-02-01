@@ -15,7 +15,7 @@ Gem::Specification.new do |spec|
 
     spec.description   = "The Munic OAuth2 strategy for OmniAuth 1.x."
     spec.summary       = spec.description
-    spec.homepage      = "http://gitlab.mobile-intra.com/maxime-dufay/omniauth-munic"
+    spec.homepage      = "https://github.com/mobile-devices/omniauth-munic"
     spec.license       = "MIT"
 
     spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }

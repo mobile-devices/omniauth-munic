@@ -21,7 +21,7 @@ Or install it yourself as:
 
 ### Register your application on MunicConnect
 
-First, you need to register your application on MunicConnect. [Here](http://accounts.munic.io/oauth/applications) you can create a new application (you need to be logged in with your MunicConnect account).
+First, you need to register your application on MunicConnect. [Here](https://connect.munic.io/oauth/applications) you can create a new application (you need to be logged in with your MunicConnect account).
 
 * Name                : Name of your application
 * Private             : If yes, MunicConnect User must be approved (by you) before be abble to sign in your application; else, any MunicConnect User can sign in.
@@ -29,7 +29,7 @@ First, you need to register your application on MunicConnect. [Here](http://acco
 * Redirect uri        : After successfull sign in on MunicConnect, customer will be redirected on your application. E.g. '[yoursite]/auth/munic/callback'. (You will re-use it [here](#Routes).)
 
 ### Set Application uid and Secret
-[MUNICCONNECTWEBSITE]/oauth/applications is listing all your applications. By clicking on the name of an application, you can get information about it, especially two strings of 64 hexadecimal characters long : "Application" and "Secret". _DO NOT_ share this credentials !
+[Applications](https://connect.munic.io/oauth/applications) is listing all your applications. By clicking on the name of an application, you can get information about it, especially two strings of 64 hexadecimal characters long : "Application" and "Secret". _DO NOT_ share this credentials !
 
 Put them in `config/initializers/omniauth.rb` like so :
 
