@@ -1,5 +1,3 @@
-require 'omniauth-munic'
-
 module OmniAuth
     module Strategies
         autoload :Munic, 'omniauth/strategies/munic'
@@ -17,16 +15,16 @@ module OmniAuth
             # additional calls (if the user id is returned with the token
             # or as a URI parameter). This may not be possible with all
             # providers.
-            uid{ raw_info['id'] }
+            uid { raw_info['id'] }
 
             info do
                 {
-                    :email => raw_info['email']
-                    :full_name => raw_info['full_name']
-                    :time_zone => raw_info['time_zone']
-                    :company => raw_info['company']
-                    :vat => raw_info['vat']
-                    :language => raw_info['language']
+                    email: raw_info['email']
+                    full_name: raw_info['full_name']
+                    time_zone: raw_info['time_zone']
+                    company: raw_info['company']
+                    vat: raw_info['vat']
+                    language: raw_info['language']
                 }
             end
 
