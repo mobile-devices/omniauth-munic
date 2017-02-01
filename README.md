@@ -19,11 +19,6 @@ Or install it yourself as:
 
     $ gem install omniauth-oauth2 omniauth-munic
 
-
-## Configuration
-
-This [git](http://gitlab.mobile-intra.com/maxime-dufay/Integrate-MunicConnect) is a sample integration of MunicConnect in an existing application. Feel free to `git log`.
-
 ### Register your application on MunicConnect
 
 First, you need to register your application on MunicConnect. [Here](http://accounts.munic.io/oauth/applications) you can create a new application (you need to be logged in with your MunicConnect account).
@@ -32,8 +27,6 @@ First, you need to register your application on MunicConnect. [Here](http://acco
 * Private             : If yes, MunicConnect User must be approved (by you) before be abble to sign in your application; else, any MunicConnect User can sign in.
 * Authorized users    : If your application is private, this allow you to authorize users to acces your application.
 * Redirect uri        : After successfull sign in on MunicConnect, customer will be redirected on your application. E.g. '[yoursite]/auth/munic/callback'. (You will re-use it [here](#Routes).)
-
-This action can be performed with an API. For more information see [here](http://MUNICCONNECTGIT/README.md#API)
 
 ### Set Application uid and Secret
 [MUNICCONNECTWEBSITE]/oauth/applications is listing all your applications. By clicking on the name of an application, you can get information about it, especially two strings of 64 hexadecimal characters long : "Application" and "Secret". _DO NOT_ share this credentials !
@@ -71,9 +64,9 @@ Above are examples.
 #### User Model
     def self.create_with_omniauth(auth)
         create! do |user|
-        user.provider = auth["provider"]
-        user.uid = auth["uid"]
-        user.email = auth["info"].email
+          user.provider = auth["provider"]
+          user.uid = auth["uid"]
+          user.email = auth["info"].email
         end
     end
 
