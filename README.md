@@ -126,3 +126,7 @@ Add this line to your session creation :
         redirect_to root_url, :notice => "Signed in!"
     end
 
+## Refresh token
+Please note that the gem does not provide a helper to refresh the access token once it has expried. Each partner application will have to implment it.
+Please use [munic connect documentation](https://connect.munic.io/docs/api/v1) for implement refresh token fallback.
+
