@@ -7,7 +7,6 @@ This gem contains the MunicConnect strategy for OmniAuth.
 Add these lines to your Gemfile:
 
 ```ruby
-gem 'omniauth-oauth2'
 gem 'omniauth-munic'
 ```
 
@@ -17,7 +16,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install omniauth-oauth2 omniauth-munic
+    $ gem install omniauth-munic
 
 ### Register your application on MunicConnect
 
