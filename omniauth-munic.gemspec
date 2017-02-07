@@ -4,9 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'omniauth-munic/version'
 
 Gem::Specification.new do |spec|
-#    spec.add_dependency "oauth2",     "~> 1.0"
-#    spec.add_dependency "omniauth",   "~> 1.2"
-    spec.add_dependency "omniauth-oauth2", "~> 1.1"
+    spec.add_dependency 'omniauth-oauth2', '~> 1.3.1'
 
     spec.name          = "omniauth-munic"
     spec.version       = OmniAuth::Munic::VERSION
@@ -15,7 +13,7 @@ Gem::Specification.new do |spec|
 
     spec.description   = "The Munic OAuth2 strategy for OmniAuth 1.x."
     spec.summary       = spec.description
-    spec.homepage      = "http://gitlab.mobile-intra.com/maxime-dufay/omniauth-munic"
+    spec.homepage      = "https://github.com/mobile-devices/omniauth-munic"
     spec.license       = "MIT"
 
     spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }

@@ -19,24 +19,17 @@ Or install it yourself as:
 
     $ gem install omniauth-oauth2 omniauth-munic
 
-
-## Configuration
-
-This [git](http://gitlab.mobile-intra.com/maxime-dufay/Integrate-MunicConnect) is a sample integration of MunicConnect in an existing application. Feel free to `git log`.
-
 ### Register your application on MunicConnect
 
-First, you need to register your application on MunicConnect. [Here](http://accounts.munic.io/oauth/applications) you can create a new application (you need to be logged in with your MunicConnect account).
+First, you need to register your application on MunicConnect. [Here](https://connect.munic.io/oauth/applications) you can create a new application (you need to be logged in with your MunicConnect account).
 
 * Name                : Name of your application
 * Private             : If yes, MunicConnect User must be approved (by you) before be abble to sign in your application; else, any MunicConnect User can sign in.
 * Authorized users    : If your application is private, this allow you to authorize users to acces your application.
 * Redirect uri        : After successfull sign in on MunicConnect, customer will be redirected on your application. E.g. '[yoursite]/auth/munic/callback'. (You will re-use it [here](#Routes).)
 
-This action can be performed with an API. For more information see [here](http://MUNICCONNECTGIT/README.md#API)
-
 ### Set Application uid and Secret
-[MUNICCONNECTWEBSITE]/oauth/applications is listing all your applications. By clicking on the name of an application, you can get information about it, especially two strings of 64 hexadecimal characters long : "Application" and "Secret". _DO NOT_ share this credentials !
+[Applications](https://connect.munic.io/oauth/applications) is listing all your applications. By clicking on the name of an application, you can get information about it, especially two strings of 64 hexadecimal characters long : "Application" and "Secret". _DO NOT_ share this credentials !
 
 Put them in `config/initializers/omniauth.rb` like so :
 
@@ -71,9 +64,9 @@ Above are examples.
 #### User Model
     def self.create_with_omniauth(auth)
         create! do |user|
-        user.provider = auth["provider"]
-        user.uid = auth["uid"]
-        user.email = auth["info"].email
+          user.provider = auth["provider"]
+          user.uid = auth["uid"]
+          user.email = auth["info"].email
         end
     end
 
@@ -105,9 +98,9 @@ You can get user's information when [creating a session](#Session-Controller) wi
 You can get :
 * Email -> auth["info"].email
 * Full Name -> auth["info"].full_name
-* Company Name -> auth["info"].company_name
-* Time Zone -> auth["info"].time_zone
-* V.a.t -> auth["info"].vat
+* Company Name -> auth["info"].company_name if present
+* Time Zone -> auth["info"].time_zone if present
+* V.a.t -> auth["info"].vat if present
 * Language -> auth["info"].language
 
 ### Update User's information
@@ -132,4 +125,8 @@ Add this line to your session creation :
         user.update_info(auth[:extra][:raw_info])       #
         redirect_to root_url, :notice => "Signed in!"
     end
+
+## Refresh token
+Please note that the gem does not provide a helper to refresh the access token once it has expried. Each partner application will have to implment it.
+Please use [munic connect documentation](https://connect.munic.io/docs/api/v1) for implement refresh token fallback.
 
