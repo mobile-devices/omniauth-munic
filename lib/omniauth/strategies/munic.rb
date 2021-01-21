@@ -1,7 +1,8 @@
 require 'omniauth-munic'
+require 'omniauth-oauth2'
 
 module OmniAuth
-    module Strategies
+    module Strategies        
         autoload :Munic, 'omniauth/strategies/munic'
 
         class Munic < OmniAuth::Strategies::OAuth2
@@ -10,7 +11,7 @@ module OmniAuth
 
             # This is where you pass the options you would pass when
             # initializing your consumer from the OAuth gem.
-            option :client_options, {:site => "accounts.munic.io"}
+            option :client_options, {:site => "connect.munic.io"}
 
             # These are called after authentication has succeeded. If
             # possible, you should try to set the UID without making
@@ -21,12 +22,12 @@ module OmniAuth
 
             info do
                 {
-                    :email => raw_info['email']
-                    :full_name => raw_info['full_name']
-                    :time_zone => raw_info['time_zone']
-                    :company => raw_info['company']
-                    :vat => raw_info['vat']
-                    :language => raw_info['language']
+                    email: raw_info['email'],
+                    full_name: raw_info['full_name'],
+                    time_zone: raw_info['time_zone'],
+                    company: raw_info['company'],
+                    vat: raw_info['vat'],
+                    language: raw_info['language'],
                 }
             end
 
