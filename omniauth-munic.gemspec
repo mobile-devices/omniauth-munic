@@ -4,9 +4,8 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'omniauth-munic/version'
 
 Gem::Specification.new do |spec|
-#    spec.add_dependency "oauth2",     "~> 1.0"
-#    spec.add_dependency "omniauth",   "~> 1.2"
-    spec.add_dependency "omniauth-oauth2", "~> 1.6"
+    spec.add_dependency "omniauth",   "~> 1.9"
+    spec.add_dependency "omniauth-oauth2", "~> 1.7"
 
     spec.name          = "omniauth-munic"
     spec.version       = OmniAuth::Munic::VERSION
@@ -24,5 +23,5 @@ Gem::Specification.new do |spec|
     spec.require_paths = ["lib"]
 
     spec.add_development_dependency "bundler", "~> 2.1"
-    spec.add_development_dependency "rake", "~> 10.0"
+    spec.add_development_dependency "rake", "~> 13.0"
 end
