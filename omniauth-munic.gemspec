@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'omniauth-munic/version'
 
 Gem::Specification.new do |spec|
-    spec.add_dependency "omniauth",   "~> 1.9"
+    spec.add_dependency "omniauth",   ">= 1.9", "< 3.0"
     spec.add_dependency "omniauth-oauth2", "~> 1.7"
 
     spec.name          = "omniauth-munic"
